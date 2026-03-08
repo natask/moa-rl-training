@@ -4,6 +4,7 @@ Connects to the deployed moa-rl-env on Northflank for rewards.
 """
 import os
 import requests
+
 from datasets import Dataset
 from trl import GRPOTrainer, GRPOConfig
 from unsloth import FastLanguageModel
@@ -93,7 +94,7 @@ trainer = GRPOTrainer(
         save_steps=50,
         max_steps=300,
         bf16=True,
-        use_vllm=True,
+        use_vllm=False,
     ),
     train_dataset=dataset,
 )
